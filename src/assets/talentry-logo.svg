@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="56" viewBox="0 0 220 56" role="img" aria-label="Talentry">
+  <text
+    x="0"
+    y="40"
+    fill="#0F1C3F"
+    font-family="Cormorant Garamond, Georgia, 'Times New Roman', serif"
+    font-size="40"
+    font-weight="600"
+    letter-spacing="-0.5"
+  >
+    Talentry
+  </text>
+  <rect x="6" y="44" width="80" height="4" rx="2" fill="#F05A28" />
+</svg>

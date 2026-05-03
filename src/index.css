@@ -1,0 +1,42 @@
+:root {
+  --tal-navy: #0f1c3f;
+  --tal-text: rgba(15, 28, 63, 0.78);
+  --tal-accent: #f05a28;
+  --tal-accent-border: rgba(240, 90, 40, 0.55);
+  --tal-accent-bg: rgba(240, 90, 40, 0.14);
+  --tal-border: rgba(15, 28, 63, 0.14);
+  --tal-shadow:
+    rgba(15, 28, 63, 0.1) 0 10px 15px -3px,
+    rgba(15, 28, 63, 0.05) 0 4px 6px -2px;
+  --sans: 'Poppins', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --serif-hero: 'Playfair Display', Georgia, serif;
+  --serif-waitlist: 'Cormorant Garamond', Georgia, serif;
+  font: 16px/1.6 var(--sans);
+  color: #000;
+  background: #fff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  margin: 0;
+  color: #000;
+  background: #fff;
+}
+
+#root {
+  min-height: 100svh;
+}
