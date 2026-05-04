@@ -562,7 +562,7 @@ function App() {
                   <dd>Youth and professionals trained across Africa</dd>
                 </div>
                 <div>
-                  <dt>12mo</dt>
+                  <dt>12 Months</dt>
                   <dd>Full development journey</dd>
                 </div>
                 <div>
