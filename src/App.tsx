@@ -1,4 +1,4 @@
-﻿import { type FormEvent, type RefObject, useCallback, useEffect, useId, useMemo, useRef, useState } from 'react'
+﻿import { type FormEvent, type RefObject, useEffect, useId, useMemo, useRef, useState } from 'react'
 import talentryLogoWordmark from './assets/talentry-logo.svg'
 import talentryLogoWordmarkLight from './assets/talentry-logo-dark.svg'
 import './App.css'
@@ -309,7 +309,6 @@ function App() {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
   const [submitState, setSubmitState] = useState<SubmitState>('idle')
   const [submitError, setSubmitError] = useState<string | null>(null)
-  const [referralToast, setReferralToast] = useState<string | null>(null)
   const [form, setForm] = useState<WaitlistFormState>({
     fullName: '',
     businessName: '',
@@ -385,19 +384,6 @@ function App() {
     setForm((prev) => ({ ...prev, [key]: value }))
     if (submitState === 'error') setSubmitState('idle')
   }
-
-  const copyInviteLink = useCallback(async () => {
-    const u = new URL(window.location.href)
-    u.hash = 'waitlist'
-    try {
-      await navigator.clipboard.writeText(u.toString())
-      setReferralToast('Link copied')
-      window.setTimeout(() => setReferralToast(null), 2000)
-    } catch {
-      setReferralToast(u.toString())
-      window.setTimeout(() => setReferralToast(null), 4000)
-    }
-  }, [])
 
   async function copyLinkThanks() {
     try {
@@ -1127,18 +1113,6 @@ function App() {
               ) : null}
             </form>
             <p className="disclaimer animate-on-scroll">Early access, launch updates, and programme details — we never sell your data.</p>
-            <div className="referral-card animate-on-scroll">
-              <div className="referral-title">Share the waitlist</div>
-              <p className="referral-copy">Send your invite link to another SME owner who should be on the list.</p>
-              <button type="button" className="referral-copy-btn" onClick={copyInviteLink}>
-                Copy your invite link
-              </button>
-              {referralToast ? (
-                <div className="referral-toast is-visible" role="status">
-                  {referralToast}
-                </div>
-              ) : null}
-            </div>
           </div>
         </section>
 
