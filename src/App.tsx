@@ -15,21 +15,22 @@ type WaitlistFormState = {
 }
 
 const STAFF_COUNT_OPTIONS = [
-  { value: '1-5', label: '1–5 staff' },
-  { value: '6-10', label: '6–10 staff' },
-  { value: '11-15', label: '11–15 staff' },
-  { value: '16+', label: '16+ staff' },
+  { value: '1-5', label: '1-5 staff' },
+  { value: '6-10', label: '6-10 staff' },
+  { value: '11-15', label: '11-15 staff' },
+  { value: '16+', label: '16+ staff (Enterprise)' },
 ] as const
 
 const SECTOR_OPTIONS = [
   { value: '', label: 'Select your sector' },
-  { value: 'agriculture', label: 'Agriculture & food' },
-  { value: 'retail', label: 'Retail & commerce' },
-  { value: 'professional', label: 'Professional services' },
-  { value: 'technology', label: 'Technology' },
-  { value: 'manufacturing', label: 'Manufacturing' },
+  { value: 'retail-trade', label: 'Retail and Trade' },
+  { value: 'fashion-apparel', label: 'Fashion and Apparel' },
+  { value: 'food-hospitality', label: 'Food and Hospitality' },
+  { value: 'professional-services', label: 'Professional Services' },
+  { value: 'logistics-delivery', label: 'Logistics and Delivery' },
+  { value: 'tech-digital', label: 'Tech and Digital Services' },
   { value: 'healthcare', label: 'Healthcare' },
-  { value: 'education', label: 'Education' },
+  { value: 'real-estate', label: 'Real Estate' },
   { value: 'other', label: 'Other' },
 ] as const
 
@@ -854,7 +855,7 @@ function App() {
                 {
                   n: '0',
                   t: 'Before Week 1',
-                  s: 'Personal welcome video from NerdzFactory',
+                  s: 'Personal welcome video from the Talentry team',
                   p: 'You receive a welcome video walking you through what your staff are about to experience and why it matters for your business.',
                 },
                 {
