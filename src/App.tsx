@@ -669,7 +669,7 @@ function App() {
               </p>
             </div>
             <blockquote className="tal-quote animate-on-scroll">
-              <p>&quot;That&apos;s exactly why I built Talentry. To fix both sides of the problem at the same time.&quot; — NerdzFactory</p>
+              <p>&quot;That&apos;s exactly why I built Talentry. To fix both sides of the problem at the same time.&quot; — Ade Olowojoba</p>
             </blockquote>
           </div>
         </section>
@@ -680,7 +680,7 @@ function App() {
             <h2 id="video-heading" className="tal-section-title animate-on-scroll">
               Why I built Talentry
             </h2>
-            <p className="tal-video__meta animate-on-scroll">NerdzFactory | 6 minutes</p>
+            <p className="tal-video__meta animate-on-scroll">Ade Olowojoba | 6 minutes</p>
             <div className="tal-video__frame animate-on-scroll" role="region" aria-label="Programme video">
               <div className="tal-video__placeholder">
                 <span className="tal-video__play" aria-hidden>
@@ -961,7 +961,7 @@ function App() {
                 <p className="tal-price-card__price tal-price-card__price--custom">Custom pricing</p>
                 <p className="tal-price-card__cap">15+ staff members</p>
                 <ul>
-                  {['Everything in Team', 'Fully customised programme design', 'Dedicated NerdzFactory programme lead', 'Custom content for your industry and culture', 'Flexible team size and delivery structure'].map((x) => (
+                  {['Everything in Team', 'Fully customised programme design', 'Dedicated Talentry programme lead', 'Custom content for your industry and culture', 'Flexible team size and delivery structure'].map((x) => (
                     <li key={x}>
                       <span aria-hidden>✓</span> {x}
                     </li>
