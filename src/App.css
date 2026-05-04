@@ -1361,11 +1361,15 @@ main > section {
   }
 }
 
-.tal-footer__name {
-  margin: 0 0 8px;
-  font-family: var(--serif-hero, 'Playfair Display', Georgia, serif);
-  font-size: 1.35rem;
-  font-weight: 700;
+.tal-footer__logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.tal-footer__logo .logo-img {
+  height: 38px;
+  width: auto;
 }
 
 .tal-footer__blurb {

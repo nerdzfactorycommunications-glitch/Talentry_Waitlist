@@ -1183,7 +1183,9 @@ function App() {
       <footer className="tal-footer tal-footer--content">
         <div className="tal-footer__grid">
           <div className="tal-footer__brand">
-            <p className="tal-footer__name">Talentry</p>
+            <a href="#hero" className="tal-footer__logo">
+              <img src={talentryLogoWordmarkLight} alt="Talentry" className="logo-img" />
+            </a>
           </div>
           <nav className="tal-footer__nav" aria-label="Footer">
             <a href="#problem">The Problem</a>
