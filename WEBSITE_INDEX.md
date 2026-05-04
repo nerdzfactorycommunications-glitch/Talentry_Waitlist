@@ -32,7 +32,7 @@
 - Final CTA section:
   - Secondary "Secure My Spot" anchor button.
 - Footer:
-  - Copyright + "A NerdzFactory Programme."
+  - Brand logo + nav links + copyright (Talentry only).
 
 ### Route B: Thanks Page (`#thanks`)
 - Triggered after successful form submission.
