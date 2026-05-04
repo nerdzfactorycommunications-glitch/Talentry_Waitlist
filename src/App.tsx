@@ -77,7 +77,7 @@ const FAQ_ITEMS: { q: string; a: string }[] = [
   },
   {
     q: 'Who built this programme?',
-    a: 'Talentry is a NerdzFactory initiative — built for Nigerian entrepreneurs who want both sides of the staff problem addressed at the same time.',
+    a: 'Talentry is built for Nigerian entrepreneurs who want both sides of the staff problem addressed at the same time.',
   },
   {
     q: 'What if my staff do not engage with the content?',
