@@ -368,6 +368,7 @@ function App() {
       'Talentry is a 12-month staff development programme for Nigerian businesses. Join the waitlist.',
     []
   )
+  const googleSheetsWebhookUrl = (import.meta.env.VITE_GOOGLE_SHEETS_WEBHOOK_URL || '').trim()
 
   const isLoading = submitState === 'loading'
 
@@ -407,10 +408,37 @@ function App() {
     if (!form.staffCount) return setSubmitState('error'), setSubmitError('Please select your team size.')
     if (!form.sector) return setSubmitState('error'), setSubmitError('Please select your sector.')
     if (!form.challenge) return setSubmitState('error'), setSubmitError('Please select your biggest staff challenge.')
+    if (!googleSheetsWebhookUrl) {
+      return setSubmitState('error'), setSubmitError('Form is not connected yet. Add the Google Sheets webhook URL.')
+    }
     setSubmitState('loading')
-    await new Promise((r) => setTimeout(r, 900))
-    setSubmitState('success')
-    window.location.hash = '#thanks'
+    try {
+      const payload = {
+        fullName: form.fullName.trim(),
+        businessName: form.businessName.trim(),
+        whatsapp: wa,
+        email: form.email.trim(),
+        staffCount: form.staffCount,
+        sector: form.sector,
+        challenge: form.challenge,
+        submittedAt: new Date().toISOString(),
+      }
+
+      const response = await fetch(googleSheetsWebhookUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload),
+      })
+      if (!response.ok) {
+        throw new Error(`Webhook failed with ${response.status}`)
+      }
+
+      setSubmitState('success')
+      window.location.hash = '#thanks'
+    } catch {
+      setSubmitState('error')
+      setSubmitError('Could not submit form. Please try again.')
+    }
   }
 
   if (route === 'thanks') {
@@ -657,24 +685,6 @@ function App() {
             <blockquote className="tal-quote animate-on-scroll">
               <p>&quot;That&apos;s exactly why I built Talentry. To fix both sides of the problem at the same time.&quot; — Ade Olowojoba</p>
             </blockquote>
-          </div>
-        </section>
-
-        <section id="video" className="tal-video" aria-labelledby="video-heading">
-          <div className="tal-wrap tal-video__inner">
-            <p className="tal-video__kicker animate-on-scroll">Hear It Directly</p>
-            <h2 id="video-heading" className="tal-section-title animate-on-scroll">
-              Why I built Talentry
-            </h2>
-            <p className="tal-video__meta animate-on-scroll">Ade Olowojoba | 6 minutes</p>
-            <div className="tal-video__frame animate-on-scroll" role="region" aria-label="Programme video">
-              <div className="tal-video__placeholder">
-                <span className="tal-video__play" aria-hidden>
-                  ▶
-                </span>
-                <p>Add your video embed URL here (e.g. YouTube or Vimeo).</p>
-              </div>
-            </div>
           </div>
         </section>
 
